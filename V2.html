@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6e6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+        }
+        h1 {
+            color: #d63384;
+            font-size: 3rem;
+            margin-bottom: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
+        p {
+            color: #555;
+            font-size: 1.5rem;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+        .heart {
+            font-size: 5rem;
+            color: red;
+            animation: heartbeat 1s infinite alternate;
+        }
+        @keyframes heartbeat {
+            from {
+                transform: scale(1);
+            }
+            to {
+                transform: scale(1.2);
+            }
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        .floating-heart {
+            position: absolute;
+            font-size: 2rem;
+            color: pink;
+            animation: floatUp 4s infinite ease-in-out;
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(100px) scale(0.5); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-200px) scale(1.2); opacity: 0; }
+        }
+        .image-container img {
+            width: 300px;
+            border-radius: 15px;
+            margin-top: 20px;
+            animation: fadeIn 3s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+<a href="v .HTML">Go to index </a>
+    <div class="image-container">
+        <img src="c:\Users\User\Pictures\แฟนน\S__6365190.jpg" alt="Valentine Image">
+        <img src="c:\Users\User\Pictures\แฟนน\S__9535501.jpg" alt="Valentine Image">
+        <img src="c:\Users\User\Pictures\แฟนน\S__9535507.jpg" alt="Valentine Image">
+</div>
+<script>
+    function createHeart() {
+        const heart = document.createElement('div');
+        heart.classList.add('floating-heart');
+        heart.innerHTML = '💖';
+        document.body.appendChild(heart);
+        
+        const xPos = Math.random() * window.innerWidth;
+        heart.style.left = `${xPos}px`;
+        heart.style.top = '100vh';
+        
+        setTimeout(() => {
+            heart.remove();
+        }, 4000);
+    }
+    setInterval(createHeart, 500);
+</script>
+
+</body>    
